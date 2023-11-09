@@ -137,7 +137,7 @@ describe('Ui Subtraction - Component', () => {
   // Arrange 
   component.operator1 = 5.0;
   component.operator2 = 2.5;
-  let subtractionButton = fixture.debugElement.query(By.css('.substraction-button'));
+  let subtractionButton = fixture.debugElement.query(By.css('.subtraction-button'));
 
   // Act
   subtractionButton.triggerEventHandler('click', null);
