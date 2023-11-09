@@ -44,4 +44,11 @@
 .division-button {
     cursor: pointer;
     color: rgb(128, 0, 0);
+    margin-right: 10px;
+}
+
+.sqrt-button {
+    cursor: pointer;
+    color: rgb(105, 128, 0);
+    margin-right: 10px;
 }

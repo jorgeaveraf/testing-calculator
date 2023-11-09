@@ -295,3 +295,68 @@ it('Should render division in result div', () => {
 });
 
 });
+
+describe('Ui Sqrt - Component', () => {
+  let component: UiComponent;
+  let fixture: ComponentFixture<UiComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ UiComponent ],
+      imports: [FormsModule],
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(UiComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('Should call sqrt method', () => {
+    // Arrange
+    let result = 0;
+    component.operator1 = 2;
+    component.operator2 = 2;
+
+    // Act
+    component.sqrt();
+    result = component.result;
+
+    // Assert
+    expect(result).toBeCloseTo(1.41);
+ });
+
+ it('should squared operator1 and operator2 when i click the sqrt button ', () => {
+  // Arrange 
+  component.operator1 = 5.0;
+  component.operator2 = 2;
+  let sqrtButton = fixture.debugElement.query(By.css('.sqrt-button'));
+
+  // Act
+  sqrtButton.triggerEventHandler('click', null);
+
+  // Assert
+  expect(component.result).toBeCloseTo(2.2360);
+
+ });
+
+it('Should render sqrt in result div', () => {
+  // Arrange
+  component.operator1 = 5;
+  component.operator2 = 5;
+
+  // Act
+  component.sqrt();
+  fixture.detectChanges();
+  
+  let de = fixture.debugElement.query(By.css('.result'));
+  let el : HTMLElement = de.nativeElement;
+
+  // Assert
+  expect(el.innerText).toContain('2.23');
+   
+});
+
+});
