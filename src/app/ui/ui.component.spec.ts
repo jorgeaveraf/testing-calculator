@@ -133,7 +133,7 @@ describe('Ui Subtraction - Component', () => {
     expect(result).toBe(0);
  });
 
- it('should add operator1 and operator2 when i click the addition button ', () => {
+ it('should substrac operator1 and operator2 when i click the subtraction button ', () => {
   // Arrange 
   component.operator1 = 5.0;
   component.operator2 = 2.5;
@@ -161,6 +161,71 @@ it('Should render subtraction in result div', () => {
 
   // Assert
   expect(el.innerText).toContain('0');
+   
+});
+
+});
+
+describe('Ui Multiplication - Component', () => {
+  let component: UiComponent;
+  let fixture: ComponentFixture<UiComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ UiComponent ],
+      imports: [FormsModule],
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(UiComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('Should call multiplication method', () => {
+    // Arrange
+    let result = 0;
+    component.operator1 = 2;
+    component.operator2 = 2;
+
+    // Act
+    component.multiplication();
+    result = component.result;
+
+    // Assert
+    expect(result).toBe(4);
+ });
+
+ it('should multiply operator1 and operator2 when i click the multiplication button ', () => {
+  // Arrange 
+  component.operator1 = 5.0;
+  component.operator2 = 2;
+  let multiplicationButton = fixture.debugElement.query(By.css('.multiplication-button'));
+
+  // Act
+  multiplicationButton.triggerEventHandler('click', null);
+
+  // Assert
+  expect(component.result).toBe(10);
+
+ });
+
+it('Should render multiplication in result div', () => {
+  // Arrange
+  component.operator1 = 5;
+  component.operator2 = 5;
+
+  // Act
+  component.multiplication();
+  fixture.detectChanges();
+  
+  let de = fixture.debugElement.query(By.css('.result'));
+  let el : HTMLElement = de.nativeElement;
+
+  // Assert
+  expect(el.innerText).toContain('25');
    
 });
 

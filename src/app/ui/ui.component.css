@@ -33,5 +33,9 @@
 .substraction-button {
     cursor: pointer;
     color: rgb(0, 62, 128);
+    margin-right: 10px;
 }
-
+.multiplication-button {
+    cursor: pointer;
+    color: rgb(0, 128, 0);
+}
