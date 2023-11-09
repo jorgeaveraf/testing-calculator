@@ -1,54 +1,49 @@
+
 .calculator {
-    width: 150px;
+    width: 250px;
+    margin: 0 auto;
     text-align: center;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .input-group {
+    margin: 10px 0;
+  }
+  
+  .input-group-addon {
     color: #999;
-}
-
-.result {
-    font-size: 3.0em;
-    font-weight: bold;
-    color: red;
-
-}
-
-.operator1 {
     font-size: 1.5em;
-    font-weight: bold;
-    color: black;
-
-}
-
-.operator2 {
+  }
+  
+  input {
     font-size: 1.5em;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  i {
+    cursor: pointer;
+    font-size: 2em;
+    color: #3498db;
+    margin-right: 10px;
+  }
+  
+  .result {
+    font-size: 2em;
     font-weight: bold;
-    color: blue;
-
-}
-
-.addition-button {
-    cursor: pointer;
-    color: blue;
-    margin-right: 10px;
-}
-.substraction-button {
-    cursor: pointer;
-    color: rgb(0, 62, 128);
-    margin-right: 10px;
-}
-.multiplication-button {
-    cursor: pointer;
-    color: rgb(0, 128, 0);
-    margin-right: 10px;
-}
-
-.division-button {
-    cursor: pointer;
-    color: rgb(128, 0, 0);
-    margin-right: 10px;
-}
-
-.sqrt-button {
-    cursor: pointer;
-    color: rgb(105, 128, 0);
-    margin-right: 10px;
-}
+    color: #2E86DE;
+    background-color: #222;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px auto; /* Centrar vertical y horizontalmente */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  
