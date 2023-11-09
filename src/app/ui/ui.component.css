@@ -38,4 +38,10 @@
 .multiplication-button {
     cursor: pointer;
     color: rgb(0, 128, 0);
+    margin-right: 10px;
+}
+
+.division-button {
+    cursor: pointer;
+    color: rgb(128, 0, 0);
 }
