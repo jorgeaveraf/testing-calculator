@@ -28,9 +28,10 @@
 .addition-button {
     cursor: pointer;
     color: blue;
+    margin-right: 10px;
 }
 .substraction-button {
     cursor: pointer;
-    color: green;
+    color: rgb(0, 62, 128);
 }
 

@@ -101,3 +101,68 @@ describe('Ui Addition - Component', () => {
 
 });
 
+describe('Ui Subtraction - Component', () => {
+  let component: UiComponent;
+  let fixture: ComponentFixture<UiComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ UiComponent ],
+      imports: [FormsModule],
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(UiComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('Should call subtraction method', () => {
+    // Arrange
+    let result = 0;
+    component.operator1 = 2;
+    component.operator2 = 2;
+
+    // Act
+    component.substraction();
+    result = component.result;
+
+    // Assert
+    expect(result).toBe(0);
+ });
+
+ it('should add operator1 and operator2 when i click the addition button ', () => {
+  // Arrange 
+  component.operator1 = 5.0;
+  component.operator2 = 2.5;
+  let subtractionButton = fixture.debugElement.query(By.css('.substraction-button'));
+
+  // Act
+  subtractionButton.triggerEventHandler('click', null);
+
+  // Assert
+  expect(component.result).toBe(2.5);
+
+ });
+
+it('Should render subtraction in result div', () => {
+  // Arrange
+  component.operator1 = 5;
+  component.operator2 = 5;
+
+  // Act
+  component.substraction();
+  fixture.detectChanges();
+  
+  let de = fixture.debugElement.query(By.css('.result'));
+  let el : HTMLElement = de.nativeElement;
+
+  // Assert
+  expect(el.innerText).toContain('0');
+   
+});
+
+});
+
