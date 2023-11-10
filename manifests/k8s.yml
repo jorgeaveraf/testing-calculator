@@ -19,7 +19,7 @@ spec:
         image: docker.io/{docker_user}/{model_name}:{github.sha}
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -29,8 +29,8 @@ metadata:
   name: {model_name}-service
 spec:
   ports:
-  - port: 8080
-    targetPort: 8080
+  - port: 80
+    targetPort: 80
   selector:
     app: {model_name}-server
   type: LoadBalancer
