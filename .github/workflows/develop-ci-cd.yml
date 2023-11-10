@@ -5,12 +5,12 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master, develop, hotfixes, release ]
+    branches: [develop]
   pull_request:
-    branches: [ master, develop, hotfixes, release ]
+    branches: [ develop]
 
 jobs:
-  build:
+  develop-ci-cd:
 
     runs-on: ubuntu-latest
 
